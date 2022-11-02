@@ -1,0 +1,11 @@
+# Command shortcuts
+alias p    print
+alias f    find
+alias h    help
+alias q    quit
+alias sh   shell
+alias dsk  disk
+alias kbd  keyboard
+# Unix compatibility
+alias echo print
+alias exit quit

@@ -1,0 +1,47 @@
+[package]
+name = "sspos"
+description = "sspos: Savenko Space Project OS"
+version = "0.1.1"
+authors = ["Ihor Savenko <csigorek@gmail.com>"]
+edition = "2018"
+license = "MIT"
+repository = "https://github.com/denver-code/sspos"
+readme = "README.md"
+default-run = "sspos"
+
+[features]
+default = ["video"]
+video = []
+serial = []
+
+[dependencies]
+acpi = "4.1.0"
+aml = "0.16.1"
+base64 = { version = "0.13.1", default-features = false }
+bit_field = "0.10.0"
+bootloader = { version = "0.9.23", features = ["map_physical_memory"] }
+hmac = { version = "0.12.1", default-features = false }
+lazy_static = { version = "1.4.0", features = ["spin_no_std"] }
+libm = "0.2.5"
+linked_list_allocator = "0.10.4"
+littlewing = { version = "0.7.0", default-features = false }
+nom = { version = "7.1.1", default-features = false, features = ["alloc"] }
+num-bigint = { version = "0.4.3", default-features = false }
+num-traits = { version = "0.2.15", default-features = false }
+object = { version = "0.29.0", default-features = false, features = ["read"] }
+pbkdf2 = { version = "0.11.0", default-features = false }
+pc-keyboard = "0.6.1"
+pic8259 = "0.10.2"
+rand = { version = "0.8.5", default-features = false }
+rand_hc = "0.3.1"
+raw-cpuid = "10.6.0"
+sha2 = { version = "0.10.6", default-features = false, features = ["force-soft"] }
+smoltcp = { version = "0.8.1", default-features = false, features = ["alloc", "medium-ethernet", "socket-tcp", "socket-udp", "socket-dhcpv4", "proto-ipv4", "proto-dhcpv4"] }
+spin = "0.9.4"
+time = { version = "0.2.27", default-features = false }
+uart_16550 = "0.2.18"
+vte = "0.11.0"
+x86_64 = "0.14.10"
+
+[package.metadata.bootimage]
+test-success-exit-code = 33 # (0x10 << 1) | 1

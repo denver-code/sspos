@@ -1,0 +1,11 @@
+{
+    "rust-analyzer.cargo.allTargets": false,
+    "rust-analyzer.checkOnSave.allTargets": true, // not sure if this one is needed
+    "rust-analyzer.checkOnSave.overrideCommand": [
+        "./cargo",
+        "xcheck",
+        "--json-output",
+        "--target",
+        "thumbv7m-none-eabi"
+    ]
+}
