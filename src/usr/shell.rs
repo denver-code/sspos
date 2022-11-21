@@ -13,11 +13,11 @@ use alloc::vec::Vec;
 use alloc::string::{String, ToString};
 
 // TODO: Scan /bin
-const AUTOCOMPLETE_COMMANDS: [&str; 38] = [
+const AUTOCOMPLETE_COMMANDS: [&str; 39] = [
     "2048", "base64", "calc", "colors", "cp", "date", "rm", "dhcp", "disk", "vsс", "editor", "env",
     "geotime", "cd", "help", "hex", "host", "http", "httpd", "install", "keyboard", "life",
     "lisp", "ls", "mem", "mv", "net", "pci", "quit", "cat", "shell", "socket", "tcp",
-    "time", "user", "vga", "mkdir", "ping"
+    "time", "user", "vga", "mkdir", "ping", "whoami"
 ];
 
 struct Config {
@@ -521,6 +521,7 @@ fn exec_with_config(cmd: &str, config: &mut Config) -> Result<(), ExitCode> {
         "mkdir"    => usr::mkdir::main(&args),
         "ping"     => usr::ping::main(),
         "info"     => usr::info::main(),
+        "whoami"   => usr::whoami::main(),
         "panic"    => panic!("{}", args[1..].join(" ")),
         _          => {
             let mut path = fs::realpath(args[0]);

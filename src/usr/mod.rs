@@ -38,3 +38,4 @@ pub mod vga;
 pub mod mkdir;
 pub mod ping;
 pub mod info;
+pub mod whoami;
