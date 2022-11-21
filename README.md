@@ -35,6 +35,8 @@ allowing you to exit the diskless mode and log in as a normal user:
 your OS, and `install` or `disk format` inside sspos if you don't use an
 emulator.**
 
+## How to build module
+    cargo build --package sspos --bin <name> --release
 
 ## Tests
 
