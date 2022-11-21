@@ -19,11 +19,4 @@ pub fn main(args: &[&str]) -> Result<(), ExitCode> {
         Err(ExitCode::Failure)
     }
 
-    // if let Some(handle) = res {
-    //     syscall::close(handle);
-    //     Ok(())
-    // } else {
-    //     error!("Could not create '{}'", pathname);
-    //     Err(ExitCode::Failure)
-    // }
 }
