@@ -30,7 +30,7 @@ pub fn main(args: &[&str]) -> Result<(), ExitCode> {
         // > read /net/tcp/time.nist.gov:13
         let parts: Vec<_> = path.split('/').collect();
         if parts.len() < 4 {
-            eprintln!("Usage: read /net/http/<host>/<path>");
+            eprintln!("Usage: cat /net/http/<host>/<path>");
             Err(ExitCode::Failure)
         } else {
             match parts[2] {

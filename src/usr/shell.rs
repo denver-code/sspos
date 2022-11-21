@@ -302,6 +302,11 @@ fn cmd_change_dir(args: &[&str], config: &mut Config) -> Result<(), ExitCode> {
     }
 }
 
+fn cmd_show_current_dir(args: &[&str], config: &mut Config) -> Result<(), ExitCode> {
+    println!("{}", sys::process::dir());
+    Ok(())
+}
+
 fn cmd_alias(args: &[&str], config: &mut Config) -> Result<(), ExitCode> {
     if args.len() != 3 {
         let csi_option = Style::color("LightCyan");
@@ -485,6 +490,7 @@ fn exec_with_config(cmd: &str, config: &mut Config) -> Result<(), ExitCode> {
         "find"     => usr::find::main(&args),
         "geotime"  => usr::geotime::main(&args),
         "cd"       => cmd_change_dir(&args, config),
+        "pwd"      => cmd_show_current_dir(&args, config),
         "help"     => usr::help::main(&args),
         "hex"      => usr::hex::main(&args),
         "host"     => usr::host::main(&args),
